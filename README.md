@@ -40,7 +40,8 @@ m<sup>old</sup> = estimated root from previous iteration                        
 5. Compare the absolute relative approximate error ∈a with the pre-specified relative error tolerance ∈s .  <br />
 If ∈a >∈s , then go to Step 3, else stop the algorithm .                                                    <br />      
 
-:memo: **Note:** We have to also check whether the number of iterations is more than the maximum number of iterations allowed. <br />
+:memo: **Note:**                                                                                            <br />
+We have to also check whether the number of iterations is more than the maximum number of iterations allowed. <br />
 If so, one needs to terminate the algorithm and notify the user about it.
 
 ## Fixed Point Iteration Method 
