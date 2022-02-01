@@ -42,3 +42,5 @@ If ∈a >∈s , then go to Step 3, else stop the algorithm .                    
 
 :memo: **Note:** We have to also check whether the number of iterations is more than the maximum number of iterations allowed. <br />
 If so, one needs to terminate the algorithm and notify the user about it.
+
+## Fixed Point Iteration Method 
