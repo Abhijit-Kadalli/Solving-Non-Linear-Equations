@@ -32,7 +32,7 @@ reach the zero of the equation f(x) = 0 .
   c) If f (a ) f (b ) = 0 ; then the root is m. Stop the algorithm if this is true .                        <br />
 
 4. Find the absolute relative approximate error as                                                          <br />
-   |∈~a~| = (  |m<sup>new</sup>  -  m<sup>old</sup> |  /  |m<sup>old</sup>|  ) * 100                           <br />
+   |∈<sup>a</sup>| = (  |m<sup>new</sup>  -  m<sup>old</sup> |  /  |m<sup>old</sup>|  ) * 100                           <br />
    m<sup>new</sup> = estimated root from present iteration                                                     <br />
    m<sup>old</sup> = estimated root from previous iteration                                                    <br />
 
@@ -81,3 +81,44 @@ And the process is repeated until we get root within desired accuracy .         
 
 10. Display x1 as root.
 
+## Newton's Method
+Newton's Method is a root-finding algorithm which produces successively better approximations to the roots of a real-valued function. 
+
+The most basic version starts with a single-variable function f defined for a real variable x, the function's derivative f′, and an initial guess x0 for a root of f. 
+
+If the function satisfies sufficient assumptions and the initial guess is close, then
+
+x1 = x0 - ( f(x0) / f'(x0) )
+
+is a better approximation of the root than x0. Geometrically, (x1, 0) is the intersection of the x-axis and the tangent of the graph of f at (x0, f(x0)):
+
+that is, the improved guess is the unique root of the linear approximation at the initial point. The process is repeated as
+
+x<sup>n+1</sup> = x<sup>n</sup> - ( f(x<sup>n</sup>) / f'(x<sup>n</sup>) )
+
+until a sufficiently precise value is reached.
+
+:memo: **Note:**
+The function f(x) should be twice differentiable in the interval.
+
+### Algorithm For Newton's Method
+1. Define function as f(x)
+
+2. Define first derivative of f(x) as g(x)
+
+3. Input initial guess (x0), tolerable error (e) 
+   and maximum iteration (N)
+
+4. Initialize iteration counter i = 1
+
+5. If g(x0) = 0 then print "Mathematical Error" and terminate 
+
+6. Calcualte x1 = x0 - f(x0) / g(x0)
+
+7. Increment iteration counter i = i + 1
+
+8. If i >= N then print "Not Convergent" and terminate 
+
+9. If |f(x1)| > e then set x0 = x1 and goto (5) 
+
+10. Print root as x1
