@@ -62,13 +62,22 @@ And the process is repeated until we get root within desired accuracy .         
 
 ### Algorithm For Fixed Point Iteration Method
 1. Define function f(x)
+
 2. Define function g(x) which is obtained from f(x)=0 such that x = g(x) and |g'(x) < 1|
+
 3. Choose intial guess x0, Tolerable Error e and Maximum Iteration N
+
 4. Initialize iteration counter: step = 1
+
 5. Calculate x1 = g(x0)
+
 6. Increment iteration counter: step = step + 1
+
 7. If step > N then print "Not Convergent" and terminate 
+
 8. Set x0 = x1 for next iteration
+
 9. If |f(x1)| > e then goto step (5) 
+
 10. Display x1 as root.
 
