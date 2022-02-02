@@ -32,7 +32,7 @@ reach the zero of the equation f(x) = 0 .
   c) If f (a ) f (b ) = 0 ; then the root is m. Stop the algorithm if this is true .                        <br />
 
 4. Find the absolute relative approximate error as                                                          <br />
-   |∈<sup>a</sup>| = (  |m<sup>new</sup>  -  m<sup>old</sup> |  /  |m<sup>old</sup>|  ) * 100                           <br />
+   |∈<sub>a</sub>| = (  |m<sup>new</sup>  -  m<sup>old</sup> |  /  |m<sup>old</sup>|  ) * 100                           <br />
    m<sup>new</sup> = estimated root from present iteration                                                     <br />
    m<sup>old</sup> = estimated root from previous iteration                                                    <br />
 
@@ -94,11 +94,11 @@ is a better approximation of the root than x0. Geometrically, (x1, 0) is the int
 
 that is, the improved guess is the unique root of the linear approximation at the initial point. The process is repeated as
 
-x<sup>n+1</sup> = x<sup>n</sup> - ( f(x<sup>n</sup>) / f'(x<sup>n</sup>) )
+x<sub>n+1</sup> = x<sub>n</sub> - ( f(x<sub>n</sub>) / f'(x<sub>n</sub>) )
 
 until a sufficiently precise value is reached.
 
-:memo: **Note:**
+:memo: **Note:**                                                                                               <br />
 The function f(x) should be twice differentiable in the interval.
 
 ### Algorithm For Newton's Method
