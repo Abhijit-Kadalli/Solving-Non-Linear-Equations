@@ -94,7 +94,7 @@ is a better approximation of the root than x0. Geometrically, (x1, 0) is the int
 
 that is, the improved guess is the unique root of the linear approximation at the initial point. The process is repeated as
 
-x<sub>n+1</sup> = x<sub>n</sub> - ( f(x<sub>n</sub>) / f'(x<sub>n</sub>) )
+x<sub>n+1</sub> = x<sub>n</sub> - ( f(x<sub>n</sub>) / f'(x<sub>n</sub>) )
 
 until a sufficiently precise value is reached.
 
@@ -122,3 +122,43 @@ The function f(x) should be twice differentiable in the interval.
 9. If |f(x1)| > e then set x0 = x1 and goto (5) 
 
 10. Print root as x1
+
+## Secant's Method
+Secant method is also used to solve non-linear equations. This method is similar to the Newton method, 
+but here we do not need to find the differentiation of the function f(x). 
+Only using f(x), we can find f’(x) numerically by using Newton’s Divide difference formula. 
+From the Newton formula, <br />
+
+x<sub>n+1</sub> = x<sub>n</sub> - ( f(x<sub>n</sub>) / f'(x<sub>n</sub>) ) <br />
+
+Now, using divide difference formula, we get, <br />
+
+f'(x<sub>n</sub>) ~  ( f(x<sub>n</sub>) -   f(x<sub>n-1</sub>) ) / ( x<sub>n</sub> - x<sub>n-1</sub> ) <br />
+
+By replacing the f’(x) of Newton-Raphson formula by the new f’(x), we can find the secant formula to solve non-linear equations. <br />
+
+x<sub>n+1</sub> = ( x<sub>n-1</sub> f(x<sub>n</sub>) - x<sub>n</sub> f(x<sub>n-1</sub>) ) / ( f(x<sub>n</sub>) -   f(x<sub>n-1</sub>) )
+
+### Algorithm for Secant's Method
+1. Define function as f(x)
+
+2. Define first derivative of f(x) as g(x)
+
+3. Input initial guess (x0), tolerable error (e) 
+   and maximum iteration (N)
+
+4. Initialize iteration counter i = 1
+
+5. If g(x0) = 0 then print "Mathematical Error" and terminate 
+
+6. Calcualte x1 = x0 - f(x0) / g(x0)
+
+7. Increment iteration counter i = i + 1
+
+8. If i >= N then print "Not Convergent" and terminate 
+
+9. If |f(x1)| > e then set x0 = x1 and goto (5) 
+
+10. Print root as x1
+
+
