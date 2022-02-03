@@ -140,25 +140,15 @@ By replacing the f’(x) of Newton-Raphson formula by the new f’(x), we can fi
 x<sub>n+1</sub> = ( x<sub>n-1</sub> f(x<sub>n</sub>) - x<sub>n</sub> f(x<sub>n-1</sub>) ) / ( f(x<sub>n</sub>) -   f(x<sub>n-1</sub>) )
 
 ### Algorithm for Secant's Method
-1. Define function as f(x)
+1. Get values of x0, x1 and e <br /> *Here x0 and x1 are the two initial guessese is the stopping criteria, absolute error or the desired degree of accuracy*
 
-2. Define first derivative of f(x) as g(x)
+2. Compute f(x0) and f(x1)
 
-3. Input initial guess (x0), tolerable error (e) 
-   and maximum iteration (N)
+3. Compute x2 = [x0*f(x1) – x1*f(x0)] / [f(x1) – f(x0)]
 
-4. Initialize iteration counter i = 1
+4. Test for accuracy of x2 <br /> If | (x2 – x1)/x2 | > e <br /> then assign x0 = x1 and x1 = x2 <br /> goto step 4
 
-5. If g(x0) = 0 then print "Mathematical Error" and terminate 
-
-6. Calcualte x1 = x0 - f(x0) / g(x0)
-
-7. Increment iteration counter i = i + 1
-
-8. If i >= N then print "Not Convergent" and terminate 
-
-9. If |f(x1)| > e then set x0 = x1 and goto (5) 
-
-10. Print root as x1
+5. Display the required root as x2
+   
 
 
