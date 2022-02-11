@@ -1,5 +1,5 @@
 # Solving Non Linear Equations
-This repo contains code for solving non linear equations (with single variable for now)
+This repo contains code for solving non linear equations
 
 ## Theorem
 An equation f (x) = 0 , where f (x) is a real continuous function, has at least one root between x=a and x=b if f(a) f(b) < 0 .
