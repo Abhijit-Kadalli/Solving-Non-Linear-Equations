@@ -152,3 +152,24 @@ x<sub>n+1</sub> = ( x<sub>n-1</sub> f(x<sub>n</sub>) - x<sub>n</sub> f(x<sub>n-1
    
 
 
+# Solving A System Of linear Equations
+Extending this repo to also contain different methods to solve a system of equations
+
+## Gauss Elimination Method 
+Gaussian elimination is also known as row reduction. It is an algorithm of linear algebra used to solve a system of linear equations. Basically, a sequence of operations is performed on a matrix of coefficients. The operations involved are:
+
+1. Swapping two rows
+2. Multiplying a row by a nonzero number
+3. Adding a multiple of one row to another row
+These operations are performed until the lower left-hand corner of the matrix is filled with zeros, as much as possible.
+
+### Algorithm for Gauss Elimination Method
+1. At first, we have imported the necessary libraries we will use in our program.
+2. We then asked the user for the number of unknown variables that we store in the variable ‘n’.
+3. After that, we created a numpy array ‘a’ of size nx(n+1) and initialized it to zero. We will be storing our augmented matrix in this array.
+4. Another array ‘x’ of size n is also created and initialized to zero. We will use this array to store the solution vector.
+5. We then used a loop to get the input of the augmented matrix.
+6. After that, we applied the Gaussian elimination method.
+7. If any of the coefficients is 0, an error is raised as division by zero is not possible.
+8. After that, we apply the back substitution method to obtain the desired output.
+
