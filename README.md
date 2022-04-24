@@ -177,30 +177,25 @@ These operations are performed until the lower left-hand corner of the matrix is
 Jacobian method or Jacobi method is one the iterative methods for approximating the solution of a system of n linear equations in n variables. The Jacobi iterative method is considered as an iterative algorithm which is used for determining the solutions for the system of linear equations in numerical linear algebra, which is diagonally dominant. In this method, an approximate value is filled in for each diagonal element. Until it converges, the process is iterated. This algorithm was first called the Jacobi transformation process of matrix diagonalization. Jacobi Method is also known as the simultaneous displacement method.
 
 ### Algorithm for Gauss Jacobi Method
-Input: initial guess {\displaystyle x^{(0)}}x^{{(0)}} to the solution, (diagonal dominant) matrix 
-  
-    
-    {\displaystyle A}
-  
-A, right-hand side vector 
-  
-    
-    {\displaystyle b}
-  
-b, convergence criterion
-Output: solution when convergence is reached
-Comments: pseudocode based on the element-based formula above
 
-{\displaystyle k=0}k=0
-while convergence not reached do
-    for i := 1 step until n do
-        {\displaystyle \sigma =0}\sigma =0
-        for j := 1 step until n do
-            if j ≠ i then
-                {\displaystyle \sigma =\sigma +a_{ij}x_{j}^{(k)}}{\displaystyle \sigma =\sigma +a_{ij}x_{j}^{(k)}}
-            end
-        end
-        {\displaystyle x_{i}^{(k+1)}={{\frac {1}{a_{ii}}}\left({b_{i}-\sigma }\right)}}{\displaystyle x_{i}^{(k+1)}={{\frac {1}{a_{ii}}}\left({b_{i}-\sigma }\right)}}
-    end
-    {\displaystyle k=k+1}k=k+1
-end
+## Gauss Seidel Method
+This is to take Jacobi’s Method one step further. Where the better solution is x = (x1, x2, … , xn), if x1(k+1) is a better approximation to the value of x1 than x1(k) is, then it would better that we have found the new value x1(k+1) to use it (rather than the old value that isx1(k)) in finding x2(k+1), … , xn(k+1). So x1(k+1) is found as in Jacobi’s Method, but in finding x2(k+1), instead of using the old value of x1(k) and old values of x3(k),…, xn(k), we then use the new value x1(k+1) and the old values x3(k), … , xn(k), and similarly for finding x3(k+1), … , xn(k+1). This process to find the solution of the given linear equation is called the Gauss-Seidel Method
+
+### Algorithm for Gauss Seidel Method
+
+## Finding Eigen Values Using Power Method
+Like the Jacobi and Gauss-Seidel methods, the power method for approximating eigenvalues is iterative. 
+First we assume that the matrix A has a dominant eigenvalue with corresponding dominant eigenvectors. 
+Then we choose an initial approximation of one of the dominant eigenvectors of A.
+This initial approximation must be a nonzero vector in Rn. 
+Finally we form the sequence given by
+
+x1 = A*x0
+x2 = A*x1 = A*(Ax0) = A^2(x0)
+.
+.
+.
+xk = A*x(k-1) = A(A^(k-1)*x0) = A^k(x0)
+
+For large powers of k, and by properly scaling this sequence, we will see that we obtain
+a good approximation of the dominant eigenvector of A 
