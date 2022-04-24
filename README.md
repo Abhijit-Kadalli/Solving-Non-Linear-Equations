@@ -173,3 +173,5 @@ These operations are performed until the lower left-hand corner of the matrix is
 7. If any of the coefficients is 0, an error is raised as division by zero is not possible.
 8. After that, we apply the back substitution method to obtain the desired output.
 
+## Gauss Jacobi Method
+Jacobian method or Jacobi method is one the iterative methods for approximating the solution of a system of n linear equations in n variables. The Jacobi iterative method is considered as an iterative algorithm which is used for determining the solutions for the system of linear equations in numerical linear algebra, which is diagonally dominant. In this method, an approximate value is filled in for each diagonal element. Until it converges, the process is iterated. This algorithm was first called the Jacobi transformation process of matrix diagonalization. Jacobi Method is also known as the simultaneous displacement method.
