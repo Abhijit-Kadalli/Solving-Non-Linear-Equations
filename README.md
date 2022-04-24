@@ -175,3 +175,32 @@ These operations are performed until the lower left-hand corner of the matrix is
 
 ## Gauss Jacobi Method
 Jacobian method or Jacobi method is one the iterative methods for approximating the solution of a system of n linear equations in n variables. The Jacobi iterative method is considered as an iterative algorithm which is used for determining the solutions for the system of linear equations in numerical linear algebra, which is diagonally dominant. In this method, an approximate value is filled in for each diagonal element. Until it converges, the process is iterated. This algorithm was first called the Jacobi transformation process of matrix diagonalization. Jacobi Method is also known as the simultaneous displacement method.
+
+### Algorithm for Gauss Jacobi Method
+Input: initial guess {\displaystyle x^{(0)}}x^{{(0)}} to the solution, (diagonal dominant) matrix 
+  
+    
+    {\displaystyle A}
+  
+A, right-hand side vector 
+  
+    
+    {\displaystyle b}
+  
+b, convergence criterion
+Output: solution when convergence is reached
+Comments: pseudocode based on the element-based formula above
+
+{\displaystyle k=0}k=0
+while convergence not reached do
+    for i := 1 step until n do
+        {\displaystyle \sigma =0}\sigma =0
+        for j := 1 step until n do
+            if j ≠ i then
+                {\displaystyle \sigma =\sigma +a_{ij}x_{j}^{(k)}}{\displaystyle \sigma =\sigma +a_{ij}x_{j}^{(k)}}
+            end
+        end
+        {\displaystyle x_{i}^{(k+1)}={{\frac {1}{a_{ii}}}\left({b_{i}-\sigma }\right)}}{\displaystyle x_{i}^{(k+1)}={{\frac {1}{a_{ii}}}\left({b_{i}-\sigma }\right)}}
+    end
+    {\displaystyle k=k+1}k=k+1
+end

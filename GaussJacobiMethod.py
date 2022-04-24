@@ -11,6 +11,7 @@ A = np.array([[10., -1., 2., 0.],
 b = np.array([6., 25., -11., 15.])
 
 N = int(input('Maximum Step: '))
+e = float(input('Tolerable Error: '))
 
 print("Linear System:" )
 for i in range(A.shape[0]):
@@ -26,14 +27,14 @@ for it_count in range(N):
         s1 = np.dot(A[i, :i], x[:i])
         s2 = np.dot(A[i, i + 1:], x[i + 1:])
         x_new[i] = (b[i] - s1 - s2) / A[i, i]
-    if np.allclose (x, x_new, atol=1e-10, rtol=0.):
+    if np.allclose (x, x_new, e, rtol=0.):
         break
     
     x = x_new
 
 print("Solution:" )
 print(x)
-e = np.dot(A, x) - b
+error = np.dot(A, x) - b
 print("Error:" )
-print(e)
+print(error)
 
